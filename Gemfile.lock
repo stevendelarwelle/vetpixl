@@ -32,6 +32,11 @@ GEM
     autoprefixer-rails (5.1.11)
       execjs
       json
+    aws-sdk (1.20.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4, < 1.6.0)
+      uuidtools (~> 2.1)
+    bcrypt (3.1.7)
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -47,6 +52,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    devise (3.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.5.2)
     haml (4.0.6)
@@ -68,6 +79,8 @@ GEM
     mime-types (1.25.1)
     minitest (5.6.1)
     multi_json (1.11.0)
+    nokogiri (1.5.11)
+    orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -131,14 +144,19 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.5)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  aws-sdk (~> 1.20.0)
   bootstrap-sass (~> 3.3.4.1)
   coffee-rails (~> 4.0.0)
+  devise (~> 3.3.0)
   haml (~> 4.0.5)
   jbuilder (~> 2.0)
   jquery-rails
