@@ -7,7 +7,9 @@
     %ul
       - @pin.errors.full_messages.each do |msg|
         %li=msg
-      
+  .form_group
+  = f.input :image, input_html: {class: 'form_control'}
+  
   .form_group
   = f.input :title, input_html: {class: 'form_control'}
   
