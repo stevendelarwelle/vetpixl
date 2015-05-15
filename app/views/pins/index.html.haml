@@ -7,3 +7,9 @@
         %p.user
         Submitted by
         = pin.user.email
+      .panel-footer 
+        - pin.tags.each do |tag|
+          .input-row
+            = tag.name 
+
+     
