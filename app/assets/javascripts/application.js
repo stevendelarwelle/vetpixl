@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fb
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-$(function() {
-  $('.input-row #post_topics_list, .input-row #post_tags_list').select2({tags:[]})
-});

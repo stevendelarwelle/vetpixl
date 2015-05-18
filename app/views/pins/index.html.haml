@@ -6,10 +6,11 @@
         %h2= link_to pin.title, pin
         %p.user
         Submitted by
-        = pin.user.email
-      .panel-footer 
+        = pin.user.name
+      .panel-footer
+        .fb-like{"data-href" => request.original_url, "data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
+        Tags:
         - pin.tags.each do |tag|
-          .input-row
-            = tag.name 
+          = link_to tag.name, tag_path(tag.name) 
 
      

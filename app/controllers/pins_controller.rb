@@ -1,14 +1,27 @@
 class PinsController < ApplicationController
   before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :tagged]
   
   def index
+    if params[:tag].present?
+    @pins = Pin.tagged_with(params[:tag])
+    else
     @pins= Pin.all.order("created_at DESC")
+    end
   end
   
   def show
     
   end
+  
+  def tagged
+  if params[:tag].present? 
+    @pins = Pin.tagged_with(params[:tag])
+  else 
+    @pins = Pin.all
+  end  
+  end
+  
   
   def new 
     @pin= current_user.pins.build

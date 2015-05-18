@@ -7,9 +7,10 @@
 	= csrf_meta_tags
 
 %body
+
 	%nav.navbar.navbar-default
 		.container
-			.navbar-brand= link_to "Vetpixl", root_path
+			.navbar-brand= link_to "VetPixl", root_path
 
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
