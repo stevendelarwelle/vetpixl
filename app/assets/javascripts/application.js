@@ -15,5 +15,4 @@
 //= require fb
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
