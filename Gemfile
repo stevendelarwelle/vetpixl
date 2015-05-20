@@ -31,9 +31,9 @@ gem 'paperclip', '~> 4.2.0'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on'
-#gem 'omniauth-facebook'
+gem 'omniauth-facebook'
 gem 'aws-sdk', '~> 1.20.0'
-
+gem "font-awesome-rails"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
