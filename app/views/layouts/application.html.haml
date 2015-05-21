@@ -10,7 +10,7 @@
 	%nav.navbar.navbar-default
 		.container
 			.navbar-brand= link_to "VetPixl", root_path
-
+			
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "New Pin", new_pin_path
@@ -23,7 +23,7 @@
 	.container
 		- flash.each do |name, msg|
 			= content_tag :div, msg, class: "alert alert-info"
-		= yield
+		
 	.container
-		%p Made by a Veteran for Veterans
-
+		%p= link_to "Rakkassan Made" , "http://en.wikipedia.org/wiki/187th_Infantry_Regiment_%28United_States%29" , target: '_blank'
+		= yield
