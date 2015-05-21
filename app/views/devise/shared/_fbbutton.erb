@@ -1,7 +1,11 @@
 <%- if devise_mapping.omniauthable? %>
         <%- resource_class.omniauth_providers.each do |provider| %>
           <%= button_to  omniauth_authorize_path(resource_name, provider) , {:class => "btn btn-primary"} do %>
-            <i class="fa fa-facebook"> </i>Sign up with <%= provider.to_s.titleize %>
+            <% if current_page?(new_user_session_path) %>
+            <i class="fa fa-facebook"> </i> Sign in with <%= provider.to_s.titleize %>
+            <% else %>
+            <i class="fa fa-facebook"> </i> Sign up with <%= provider.to_s.titleize %>
+            <% end %>
           <% end %>
         <% end -%>
       <% end -%>
