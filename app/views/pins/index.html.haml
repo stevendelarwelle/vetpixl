@@ -8,7 +8,6 @@
         Submitted by
         = pin.user.name
       .panel-footer
-        .fb-like{"data-href" => request.original_url, "data-send" => "true", "data-show-faces" => "true", "data-width" => "450"}
         Tags:
         - pin.tags.each do |tag|
           = link_to tag.name, tag_path(tag.name) 
