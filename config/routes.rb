@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" , registrations: 'registrations'}
   
   get 'tags/:tag', to: 'pins#index', as: :tag
+  get 'user/:user', to: 'pins#index', as: :user
   resources :pins do
     member do
       put "like", to: "pins#upvote"
+      put "down", to: "pins#downvote"
      end
   end
  

@@ -1,12 +1,16 @@
 class PinsController < ApplicationController
-  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show, :tagged]
   
   def index
     if params[:tag].present?
     @pins = Pin.tagged_with(params[:tag])
-    else
-    @pins= Pin.all.order("created_at DESC")
+    else 
+      if params[:user].present?
+      @pins = Pin.where(user_id: params[:user])
+      else
+      @pins= Pin.all.order("created_at DESC")
+      end
     end
   end
   
@@ -58,9 +62,14 @@ class PinsController < ApplicationController
     redirect_to :back
   end
   
+  def downvote
+    @pin.downvote_from current_user
+    redirect_to :back
+  end
+  
   private
   def pin_params
-    params.require(:pin).permit(:title, :description, :image, :tag_list)
+    params.require(:pin).permit(:title, :description, :image, :tag_list, :user)
   end
   def find_pin
     @pin= Pin.find(params[:id])

@@ -11,7 +11,7 @@
 					.col-md-6
 						%p.user
 							Submitted by
-							= @pin.user.name
+							= link_to @pin.user.name, user_path(@pin.user.id)
 					.col-md-6
 						.container
 							.fb-like{"data-href" => request.original_url, "data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "false", "data-width" => "50"}
@@ -22,6 +22,9 @@
 							- if user_signed_in?
 								= link_to "Edit", edit_pin_path, class: "btn btn-default"
 								= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+							= link_to down_pin_path(@pin), method: :put, class: "btn btn-default" do
+								%span.fa.fa-thumbs-o-down
+								= @pin.get_downvotes.size
 				.row
 					.col-md-6
 						.fb-comments{"data-href" => request.original_url, "data-numposts" => "1", "data-colorscheme" => "light", "data-width" => "500"}

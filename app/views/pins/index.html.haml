@@ -6,7 +6,7 @@
         %h2= link_to pin.title, pin
         %p.user
         Submitted by
-        = pin.user.name
+        = link_to pin.user.name, user_path(pin.user.id)
       .panel-footer
         Tags:
         - pin.tags.each do |tag|
