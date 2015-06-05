@@ -1,3 +1,4 @@
+= render :partial => "layouts/search"
 #pins.transitions-enabled
   - @pins.each do |pin|
     .box.panel.panel-default
@@ -10,6 +11,6 @@
       .panel-footer
         Tags:
         - pin.tags.each do |tag|
-          = link_to tag.name, tag_path(tag.name) 
+          = link_to tag.name, tag_path(tag.name) , :class =>"label label-default"
 
      
