@@ -4,7 +4,7 @@
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
-
+	= render :partial => "layouts/sumo"
 %body
 
 	%nav.navbar.navbar-default
@@ -26,7 +26,6 @@
 	.container
 		- flash.each do |name, msg|
 			= content_tag :div, msg, class: "alert alert-info"
-	.container
-		.fb-like{"data-href" => request.original_url, "data-layout" => "button", "data-send" => "true", "data-show-faces" => "false", "data-width" => "50"}	
+		
 	= yield
 	
