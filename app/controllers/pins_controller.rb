@@ -8,16 +8,16 @@ class PinsController < ApplicationController
   
   def index
     if params[:tag].present?
-    @pins = Pin.tagged_with(params[:tag])
+			@pins = Pin.tagged_with(params[:tag])
     else 
       if params[:user].present?
-      @pins = Pin.where(user_id: params[:user])
+				@pins = Pin.where(user_id: params[:user])
       else
         if params[:search].present?
           #@pins = Pin.tagged_with(["%#{params[:search]}%"], :any => true)
-          @pins = Pin.tagged_with(params[:search], :any => true)
+					@pins = Pin.tagged_with(params[:search], :any => true)
         else
-        @pins= Pin.all.order("created_at DESC")
+					@pins= Pin.all.order("created_at DESC")
         end
       end
     end
@@ -29,9 +29,9 @@ class PinsController < ApplicationController
   
   def tagged
   if params[:tag].present? 
-    @pins = Pin.tagged_with(params[:tag])
+		@pins = Pin.tagged_with(params[:tag])
   else 
-    @pins = Pin.all
+		@pins = Pin.all
   end  
   end
   

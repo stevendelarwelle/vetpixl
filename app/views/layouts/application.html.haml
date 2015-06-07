@@ -4,27 +4,29 @@
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
-	= render :partial => "layouts/sumo"
+
 %body
 
 	%nav.navbar.navbar-default
 		.container
 			.navbar-brand= link_to "VetPixl", root_path
-			= render :partial => "layouts/search" 
+			= yield(:search)
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "My Pixls", user_path(current_user.id)
 					%li= link_to "New Pixl", new_pin_path
 					%li= link_to "Account", edit_user_registration_path
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+					%li= link_to "About", pages_about_path
 			- else
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Sign Up", new_user_registration_path
 					%li= link_to "Sign In", new_user_session_path
+					%li= link_to "About", pages_about_path
 	.container
 		- flash.each do |name, msg|
 			= content_tag :div, msg, class: "alert alert-info"
-		
-	= yield
 	.container
-		%p= link_to "Rakkassan Made" , "http://en.wikipedia.org/wiki/187th_Infantry_Regiment_%28United_States%29" , target: '_blank'
+		.fb-like{"data-href" => request.original_url, "data-layout" => "button", "data-send" => "true", "data-show-faces" => "false", "data-width" => "50"}	
+	= yield
+	

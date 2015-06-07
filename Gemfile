@@ -38,6 +38,7 @@ gem 'font-awesome-rails'
 gem 'rails_admin'
 gem 'nokogiri'
 gem 'responders'
+gem 'will_paginate', '~> 3.0.6'
 #gem 'ransack'
 #gem 'amistad'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
