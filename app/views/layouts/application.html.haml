@@ -10,7 +10,7 @@
 	%nav.navbar.navbar-default
 		.container
 			.navbar-brand= link_to "VetPixl", root_path
-			= yield(:search)
+			= render :partial => "layouts/search"
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "My Pixls", user_path(current_user.id)
