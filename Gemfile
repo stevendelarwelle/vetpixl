@@ -33,7 +33,7 @@ gem 'masonry-rails', '~> 0.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on'
 gem 'omniauth-facebook'
-gem 'aws-sdk'#, '~> 1.20.0'
+gem 'aws-sdk', '< 2.0' #updated this
 gem 'font-awesome-rails'
 gem 'rails_admin'
 gem 'nokogiri'
