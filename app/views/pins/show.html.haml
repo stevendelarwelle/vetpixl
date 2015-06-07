@@ -5,6 +5,9 @@
 				= image_tag @pin.image.url
 			.panel-body
 				%h1= @pin.title
+				Tags:
+				- @pin.tags.each do |tag|
+					= link_to tag.name, tag_path(tag.name) , :class =>"label label-default"
 				%p.description= @pin.description
 			.panel-footer
 				.row

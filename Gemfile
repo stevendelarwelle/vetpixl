@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
-
+ gem 'web-console', '~> 2.0' , group: :development
+#gem 'responders', '~> 2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,15 +27,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'haml', '~> 4.0.5'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'simple_form', '~> 3.1.0'
-gem 'devise', '~> 3.3.0'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'paperclip', '~> 4.2.0'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on'
 gem 'omniauth-facebook'
-gem 'aws-sdk', '~> 1.20.0'
+gem 'aws-sdk'#, '~> 1.20.0'
 gem 'font-awesome-rails'
 gem 'rails_admin'
+gem 'nokogiri'
+gem 'responders'
 #gem 'ransack'
 #gem 'amistad'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

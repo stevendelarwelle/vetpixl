@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :tagged]
   before_filter :set_search
   def set_search
-    @search=Pin.search(params[:q])
+    @search=Pin.tagged_with(params[:q])
   end
   
   def index
