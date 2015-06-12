@@ -8,7 +8,7 @@
       - @pin.errors.full_messages.each do |msg|
         %li=msg
   .form_group
-  = f.input :image, input_html: {class: 'form_control'}
+  = f.input :image, input_html: {class: 'form_control', input_type:'file', accept: 'image/*', capture: 'camera'} 
   
   .form_group
   = f.input :title, input_html: {class: 'form_control'}
